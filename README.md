@@ -31,18 +31,18 @@ $ docker run -it -p 8000:8000 james18178/snowboy-seasalt-chinese
 
 ![Screen shot of web interface](screenshot.png)
 
-Audio visualization is provided by [wavesurfer-js](https://wavesurfer-js.org/)
+音频可视化由 [wavesurfer-js](https://wavesurfer-js.org/) 提供 
 
 ## HTTP API
 
-You can also `POST` your audio examples to the web server directly and get a `.pmdl` file back!
+您还可以`POST`将您的音频示例直接发送到 Web 服务器并取回`.pmdl`文件！
 
-The `/generate` endpoint expects form data with:
+该`/generate`提交表单数据有：
 
-* A `modelName` field with your wake word name
-* At least 3 files with audio samples
-    * These will be converted to the appropriate format with `ffmpeg`
-    * Unless `?noTrim=true` is given, silence is automatically trimmed from the beginning and end of each example
+* 一个`modelName`模型文件名称
+* 至少 3 个包含音频样本的文件
+    * 这些将被转换为适当的格式 `ffmpeg`
+    * 除非`?noTrim=true`给出，否则会从每个示例的开头和结尾自动修剪静音
 
 ```sh
 $ curl \
